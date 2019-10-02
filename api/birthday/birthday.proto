@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package proto3;
+package birthday;
 
 service BirthdayChecker {
 	rpc checkBirthday (Date) returns (BirthdayStatus);

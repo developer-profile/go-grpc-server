@@ -1,4 +1,4 @@
-package api
+package birthday
 
 import (
 	context "context"
@@ -6,15 +6,19 @@ import (
 	"time"
 )
 
-type server struct {
+type Server struct {
 }
 
-func (s *server) CheckBirthday(ctx context.Context, in *Date) (*BirthdayStatus, error) {
+func (s *Server) CheckBirthday(ctx context.Context, in *Date) (*BirthdayStatus, error) {
 	// Create date 
-	userBirthday := strconv.FormatInt(in.Day, 10) + "-" + istrconv.FormatInt(in.Month, 10) + strconv.FormatInt(in.Year, 10)
+	userBirthday := strconv.FormatInt(in.Day, 10) + "-" + strconv.FormatInt(in.Month, 10) + strconv.FormatInt(in.Year, 10)
 	currentDate := time.Now()
 
 	if userBirthday == currentDate.Format("01-02-2006") {
-		return &BirthdayStatus(Status: true, Age: 29)
+		// TODO change age status
+		return &BirthdayStatus{Status: true, Age: 29}, nil
+	} else {
+		// TODO change age status
+		return &BirthdayStatus{Status: false, Age: 29}, nil
 	}
 }
