@@ -18,7 +18,7 @@ const BirthdayStatus$json = const {
   '1': 'BirthdayStatus',
   '2': const [
     const {'1': 'status', '3': 1, '4': 1, '5': 8, '10': 'status'},
-    const {'1': 'age', '3': 2, '4': 1, '5': 9, '10': 'age'},
+    const {'1': 'age', '3': 2, '4': 1, '5': 3, '10': 'age'},
   ],
 };
 

@@ -11,7 +11,7 @@ import 'package:fixnum/fixnum.dart';
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class Date extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Date', package: const $pb.PackageName('proto3'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('Date', package: const $pb.PackageName('birthday'), createEmptyInstance: create)
     ..aInt64(1, 'day')
     ..aInt64(2, 'month')
     ..aInt64(3, 'year')
@@ -49,9 +49,9 @@ class Date extends $pb.GeneratedMessage {
 }
 
 class BirthdayStatus extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo('BirthdayStatus', package: const $pb.PackageName('proto3'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo('BirthdayStatus', package: const $pb.PackageName('birthday'), createEmptyInstance: create)
     ..aOB(1, 'status')
-    ..aOS(2, 'age')
+    ..aInt64(2, 'age')
     ..hasRequiredFields = false
   ;
 
@@ -74,8 +74,8 @@ class BirthdayStatus extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(0);
   void clearStatus() => clearField(1);
 
-  $core.String get age => $_getS(1, '');
-  set age($core.String v) { $_setString(1, v); }
+  Int64 get age => $_getI64(1);
+  set age(Int64 v) { $_setInt64(1, v); }
   $core.bool hasAge() => $_has(1);
   void clearAge() => clearField(2);
 }

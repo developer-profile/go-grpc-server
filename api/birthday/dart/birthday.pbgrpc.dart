@@ -15,7 +15,7 @@ export 'birthday.pb.dart';
 
 class BirthdayCheckerClient extends $grpc.Client {
   static final _$checkBirthday = $grpc.ClientMethod<$0.Date, $0.BirthdayStatus>(
-      '/proto3.BirthdayChecker/checkBirthday',
+      '/birthday.BirthdayChecker/checkBirthday',
       ($0.Date value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.BirthdayStatus.fromBuffer(value));
 
@@ -33,7 +33,7 @@ class BirthdayCheckerClient extends $grpc.Client {
 }
 
 abstract class BirthdayCheckerServiceBase extends $grpc.Service {
-  $core.String get $name => 'proto3.BirthdayChecker';
+  $core.String get $name => 'birthday.BirthdayChecker';
 
   BirthdayCheckerServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Date, $0.BirthdayStatus>(
