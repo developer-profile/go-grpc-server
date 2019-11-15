@@ -20,9 +20,9 @@ func main() {
 
 	c := birthday.Server{}
 
-	response, err := c.CheckBirthday(context.Background(), &birthday.Date{Day: 30, Month: 12, Year: 1999})
+	response, err := c.CheckBirthday(context.Background(), &birthday.Date{Day: 3, Month: 11, Year: 2019})
 	if err != nil {
 		log.Fatalf("error when calling SayHello: %s", err)
 	}
-	log.Printf("Response from server: %s", response.Age)
+	log.Printf("Response from server: %v", response.Status)
 }
