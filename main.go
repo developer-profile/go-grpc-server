@@ -1,11 +1,12 @@
 package main
 
 import (
-	"google.golang.org/grpc"
-	"github.com/daniel-vera-g/golang-grpc-server/api/birthday"
-	"log"
 	"fmt"
+	"log"
 	"net"
+
+	"github.com/daniel-vera-g/golang-grpc-server/api/birthday"
+	"google.golang.org/grpc"
 )
 
 func main() {
@@ -26,6 +27,5 @@ func main() {
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatal("failed to serve: %s", err)
 	}
-
 
 }

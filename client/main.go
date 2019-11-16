@@ -12,7 +12,7 @@ func main() {
 	var conn *grpc.ClientConn
 
 	// Initiate a connection with the server
-	conn, err := grpc.Dial("localhost:7777", grpc.WithInsecure())
+	conn, err := grpc.Dial("192.168.0.94:7777", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("did not connect: %s", err)
 	}
@@ -24,5 +24,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("error when calling SayHello: %s", err)
 	}
-	log.Printf("Response from server: %v", response.Status)
+	log.Printf("Response from server: %v", response.Age)
 }
