@@ -1,53 +1,56 @@
 package birthday
 
 import (
-	context "context"
-	// "strconv"
-	// "time"
+	"context"
+	"fmt"
+	"time"
 )
 
 type Server struct{}
 
+var t = time.Now()
+
 func (s *Server) CheckBirthday(ctx context.Context, in *Date) (*BirthdayStatus, error) {
 
-	return &BirthdayStatus{Status: true, Age: 2}, nil
+	// return &BirthdayStatus{Status: true, Age: 2}, nil
 
-	// t := time.Now()
-	// year := in.Year
-	// month := in.Month
-	// day := in.Month
+	var year = in.Year
+	var month = in.Month
+	var day = in.Month
 
-	// userBirthday := strconv.FormatInt(year, 10) + "-" + strconv.FormatInt(month, 10) + "-" + strconv.FormatInt(day, 10)
+	userBirthday := fmt.Sprint(year) + "-" + fmt.Sprint(month) + "-" + fmt.Sprint(day)
+	today := getCurrentDate()
 
-	// today := getCurrentDate(t)
+	//Check if user has birthday
+	if userBirthday == today {
+		return &BirthdayStatus{Status: true, Age: getAge(year, month)}, nil
+	}
+	return &BirthdayStatus{Status: false, Age: getAge(year, month)}, nil
+}
 
-	// Check if user has birthday
-	// if userBirthday == today {
-	// return &BirthdayStatus{Status: true, Age: getAge(year, month, t)}, nil
-	// }
-	// return &BirthdayStatus{Status: false, Age: getAge(year, month, t)}, nil
-	// }
+func getCurrentDate() string {
+	//Get current date
+	today := fmt.Sprint(getYear()) + "-" + fmt.Sprint(getMonth()) + "-" + fmt.Sprint(getDay())
+	return today
+}
 
-	// func getCurrentDate(Time t) string {
-	// Get current date
-	// today := getYear(t) + "-" + getMonth(t) + "-" + getDay(t)
-	// return today
-	// }
+func getAge(year int32, month int32) int32 {
+	var age int32
 
-	// func getAge(int64 year, int64 month, Time t) int64 {
-	// Calculate birthday
-	// age := getYear(t) - year
-	// if age == 0 {
-	// age := getMonth(t) - month
-	// }
+	//Calculate birthday
+	age = getYear() - year
+	if age == 0 {
+		age = getMonth() - month
+	}
 
-	// return age
-	// }
+	return age
+}
 
-	// func getYear(Time t) string { return strconv.Itoa(int(t.Month())) }
+func getYear() int32 { return int32(t.Year()) }
 
-	// func getMonth(Time t) string { return strconv.Itoa(int(t.Month())) }
+func getMonth() int32 { return int32(t.Month()) }
 
-	// func getDay(Time t) string { return strconv.Itoa(t.Day())
+func getDay() int32 {
+	return int32(t.Day())
 
 }

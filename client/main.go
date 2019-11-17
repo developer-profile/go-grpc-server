@@ -20,7 +20,7 @@ func main() {
 
 	c := birthday.Server{}
 
-	response, err := c.CheckBirthday(context.Background(), &birthday.Date{Day: 3, Month: 11, Year: 2019})
+	response, err := c.CheckBirthday(context.Background(), &birthday.Date{Day: 17, Month: 11, Year: 1999})
 	if err != nil {
 		log.Fatalf("error when calling SayHello: %s", err)
 	}
