@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/daniel-vera-g/golang-grpc-server/api/birthday"
@@ -24,5 +25,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("error when calling SayHello: %s", err)
 	}
-	log.Printf("Response from server: %v", response.Age)
+	if response.Status {
+		log.Printf("Congratulations for your Birthday! You're %v years old.", response.Age)
+	} else {
+		fmt.Printf("Sadly it's not your Bithday. You're current age is %v", response.Age)
+	}
 }
