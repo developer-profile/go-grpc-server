@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/daniel-vera-g/golang-grpc-server/api/birthday"
+	"github.com/developer-profile/go-grpc-server/api/birthday"
 	"google.golang.org/grpc"
 )
 

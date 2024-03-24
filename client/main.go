@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/daniel-vera-g/golang-grpc-server/api/birthday"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
